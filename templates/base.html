@@ -1,0 +1,35 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8" >
+    <title>{% block title %}{% endblock  %}</title>
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+</head>
+<body>
+<div class="container">
+ <ol class="breadcrumb my-4">
+  {% block breadcrumb %}{% endblock  %}
+    </ol>
+
+     {% block content %}{% endblock  %}
+
+    </div>
+</body>
+{% comment %} <script src="basecontrol.js"></script> {% endcomment %}
+
+   {% block scripts %}
+<script src="{%static 'js/jquery-3.4.1.min.js'%}"></script>
+<script src="{%static 'js/popper.min.js'%}"></script>
+<script src="{%static 'js/bootstrap.min.js'%}"></script>
+<script src="{%static 'js/basecontrol.js'%}">
+ 
+{% comment %} var y = new BaseControl({ container: $("ab")}); {% endcomment %}
+{% comment %} x.getDefaultMainElement();
+ x.launch(); {% endcomment %}
+</script>
+  {% endblock %}
+<script type="text/javascript">
+var y = new BaseControl({ container: $("ab")});
+</script>
+
+</html>

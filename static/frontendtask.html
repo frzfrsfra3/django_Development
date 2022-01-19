@@ -1,0 +1,39 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" >
+    <title>This is Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+ <form id="gago">
+ </form>
+    </div>
+</body>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/basecontrol.js"></script>
+<script  type="text/javascript">
+var items=[];
+v4=document.querySelector("#gago");
+ vv_4=new BaseControl(v4);
+ v_4=new Sub(vv_4);
+ v_4.IDs.headerElement="1"
+ v_4.launch();
+ v_4.createInput("text","");
+  v_4.createDropdown();
+  v_4.createButton("submit");
+  gago.setAttribute("onsubmit","v_4.submitlinker(event,items,'input.'+v_4.fullelement())"
+     );
+  v_4.on("change", $( "select."+ v_4.fullelement() ).on( "change", function( ) {
+ // alert( "Hellokkk " );
+  v_4.dropdowntrigger(); 
+  })
+  
+   
+     );	 
+	 
+</script>
+</html>

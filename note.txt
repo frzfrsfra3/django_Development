@@ -1,0 +1,1 @@
+I created the 4 entities and tested them using python  manage.py shell

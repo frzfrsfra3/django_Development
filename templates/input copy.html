@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %} Submission {% endblock  %}
+{% block breadcrumb  %}
+   
+    <li class="breadcrumb-item active">Submission</li>
+{% endblock  %}  
+   {% block content %}
+    <form method="post" >
+ {% csrf_token %} 
+ 
+
+ <div class="form-group">
+
+ <label for="id_subject">Subject</label>
+<input class="form-control" type="text" name="subject" id="id_subject" >
+ 
+</div>
+<div class="form-group">
+ <labelfor="id_message" >Message</label>
+<input  class="form-control"  type="text" name="message" id="id_message">
+
+</div> 
+<div class="form-group">
+<div class="dropdown show">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown link
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+</div>
+<div id="ab">
+
+</div>
+<button class="btn btn-success" type="submit">Add</button>
+</form>
+
+
+
+
+   
+
+
+
+   {% endblock  %}
+
+<script  src="basecontrol.js" >
+let x = new BaseControl("ab");
+x.getDefaultMainElement();
+ x.launch();
+</script>

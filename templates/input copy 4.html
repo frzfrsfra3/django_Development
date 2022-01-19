@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+{% block title %} Submission {% endblock  %}
+{% block breadcrumb  %}
+   
+    <li class="breadcrumb-item active">Submission</li>
+{% endblock  %}  
+   {% block content %}
+    <form method="post" >
+ {% csrf_token %} 
+ 
+
+ <div class="form-group">
+
+ <label for="id_subject">Subject</label>
+<input class="form-control" type="text" name="subject" id="id_subject" >
+ 
+</div>
+<div class="form-group">
+ <labelfor="id_message" >Message</label>
+<input  class="form-control"  type="text" name="message" id="id_message">
+
+</div> 
+<div class="form-group">
+<div class="dropdown show">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown link
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+</div>
+<div id="ab">
+
+</div>
+<div id="abc">
+
+</div>
+<div id="efg">
+</div>
+
+
+ <table >
+                                    <div  id="marray" >
+                                                                                        
+                                    </div>
+                                </table>
+<a href="#" id="ab2">ABC</a>
+<div id="foo">
+<h1>Foo</h1>
+</div>
+<div id="id-SampleControl-abc">
+
+</div>
+<button class="btn btn-success" type="submit">Add</button>
+</form>
+
+<form onsubmit="guardarNumeros()">
+ <p>Please insert the items</p>
+ <input type="text" id="box">
+ <input type="submit" value="Submit">
+</form>
+
+<label id="stat1"></label>
+
+<select  id="selectNumber" class="btn btn-secondary dropdown-toggle">
+    <option>Choose a number</option>
+</select> 
+
+
+
+   {% endblock  %}
+  {% block scripts %}
+ {{ block.super }}
+  <script  type="text/javascript">
+const v_efg=document.getElementById("efg");
+const xyz=document.querySelector("#foo");
+var v_xyz=new BaseControl(xyz);
+v_xyz.mainElement=$("#foo");
+v_xyz.mainElementID="1";
+v_xyz.disableAutoWrapper=true;
+v_xyz.launch();
+{% comment %} $("#box").append("<div></div>"); {% endcomment %}
+$('.'+v_xyz.absoluteID(v_xyz.mainElementID)).append("<input type='text'/>");
+
+var aaa=new BaseControl("aaaa");
+aaa.launch();
+var v_2=new SampleControl(v_xyz);
+v_2.mainElementID="1";
+{% comment %} v_2. {% endcomment %}
+v_2.launch();
+ v_2.IDs.headerElement=3;
+v_2._initUI();
+{% comment %} BaseControl.initialIDPrefix = "xx"; {% endcomment %}
+var v_3=new Sub(v_xyz);
+v_3.mainElementID=3;
+ v_3.IDs.headerElement=3;
+v_3.launch();
+
+document.querySelector("." +v_2.absoluteID(v_2.IDs.headerElement)).innerHTML="new";
+var b=v_2.absoluteID(v_2.IDs.headerElement);
+
+{% comment %} $('.'+v_xyz.absoluteID(v_xyz.mainElementID)).append("<input type='text'/>"); {% endcomment %}
+{% comment %}  v_2.absoluteID(v_2.IDs.headerElement) {% endcomment %}
+{% comment %} const v_xyz2=document.querySelector(v_2); {% endcomment %}
+{% comment %} const v_xyz2=document.querySelector(v_xyz); {% endcomment %}
+const List=new SampleControl(v_efg);
+List.mainElement="<h1>";
+
+    dodo =new SampleControl("abc");
+    {% comment %} BaseControl.allExist(dodo); {% endcomment %}
+ yy=new BaseControl("x");
+ yy.launch();
+ {% comment %} ff=document.querySelector(yy); {% endcomment %}
+ xy=new BaseControl("abc");
+ 
+ op=new SampleControl({IDs: "ab"});
+
+
+ xy.getDefaultMainElement();
+ op._initUI();
+   (function(){
+                var countup = this;
+                var newNode = document.createElement('div');
+                newNode.SampleControl = 'textNode news content';
+                newNode.innerHTML = 'this created div contains a class while created!!!';
+                document.getElementById('ab').appendChild(newNode);
+            })();
+xr=new SampleControl("abc");
+xr.IDs="abc";
+let pop=document.getElementById("abc");
+ o2=new SampleControl(pop);
+ o2.IDs.headerElement="bobo";
+$("ab2").click(
+function(){
+                var countup = this;
+                var newNode = document.createElement('div');
+                newNode.SampleControl = 'textNode news content';
+                newNode.innerHTML = 'this created div contains a class while created!!!';
+                document.getElementById('abc').appendChild(newNode);
+            }
+
+);
+coco=new SampleControl("<h1>testing</h1>");
+coco._initUI();
+base=new BaseControl("<h1>testing</h1>");
+nou=new Sub("nice");
+{% comment %} nou.createBy("abc"); {% endcomment %}
+{% comment %}  !== -1 {% endcomment %}
+$('#abc').append("<h1>hello worldo</h1>");
+for (i=0;i<5;i++)
+{
+  $("marray").append("<h1>hello marry</h1>");
+}
+var items = [];
+ var status ="";
+function guardarNumeros() {
+   
+  boxvalue = document.getElementById('box').value;
+   status = items.indexOf(boxvalue) !==-1 ? 'this value already exists' : 'this value was added' ;
+ document.querySelector("#stat1").innerHTML=status;
+    document.getElementById("stat1").value = status;
+    if(status=="this value was added")
+    {
+  items.push(boxvalue);  
+ var select = document.getElementById("selectNumber");
+ var el = document.createElement("option");
+  el.value=boxvalue;
+select.appendChild(el);
+el.textContent=boxvalue;
+
+    }
+  console.log(items);
+
+  return false;
+}
+
+{% comment %} 
+
+var select = document.getElementById("selectNumber");
+var options = ["1", "2", "3", "4", "5"];
+
+for(var i = 0; i < items.length; i++) {
+    var opt = options[i];
+    var el = document.createElement("option");
+    el.textContent = opt;
+    el.value = opt;
+    select.appendChild(el);
+} {% endcomment %}
+</script>
+{% endblock %}
+
+
+    {% comment %} <script  type="text/javascript">
+ yy=new BaseControl("x");
+
+</script>
+   {% endcomment %}
+
+{% comment %} <script  src="basecontrol.js" >
+var x = new BaseControl("ab");
+x.getDefaultMainElement();
+ x.launch(); {% endcomment %}
+{% comment %} const y = new BaseControl({
+ "ab"
+});  {% endcomment %}
+{% comment %} </script> {% endcomment %}
